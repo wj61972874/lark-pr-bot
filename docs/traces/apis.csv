@@ -1,0 +1,3 @@
+feat_id,method,path,desc
+FEAT-3c25-lark-pr-bot,POST,/webhook,接收GitHub Webhook事件（HMAC验签+路由+派发）
+FEAT-3c25-lark-pr-bot,GET,/health,健康检查端点

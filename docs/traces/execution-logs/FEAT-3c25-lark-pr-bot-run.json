@@ -1,0 +1,86 @@
+{
+  "feat_id": "FEAT-3c25-lark-pr-bot",
+  "task_level": "FEATURE",
+  "started_at": "2026-04-30T14:19:55Z",
+  "ended_at": "2026-04-30T14:45:00Z",
+  "baseline_hashes": {
+    "docs/product/PRODUCT-MAP.md": "N/A",
+    "docs/product/modules/notification/index.md": "N/A",
+    "docs/product/modules/notification/NotificationDispatcher.md": "N/A"
+  },
+  "phases": [
+    {
+      "phase": 0,
+      "skill": "pipeline",
+      "decision": "新项目全新功能，定级 FEATURE；三核心组件 WebhookReceiver/NotificationDispatcher/ConfigLoader；完整级模板",
+      "artifacts": ["docs/traces/FEAT-3c25-lark-pr-bot.md"],
+      "notes": "mode: dev，无产品地图，无 CLAUDE.md"
+    },
+    {
+      "phase": 2,
+      "skill": "architect",
+      "decision": "生成完整级 OpenSpec；定义 6 种 NotificationType、4 种 LarkCardColor、FSM 5 态、4 条不变式、6 条故障旅程",
+      "artifacts": [
+        "docs/specs/FEAT-3c25-lark-pr-bot.spec.md",
+        "src/types/index.ts",
+        "CLAUDE.md"
+      ],
+      "notes": "双产出验证通过；所有验收标准已映射到类型"
+    },
+    {
+      "phase": 3,
+      "skill": "qa",
+      "decision": "编写 38 个测试覆盖：4 条不变式守卫、FSM 全状态转换、6 条故障旅程、多团队隔离、所有验收标准",
+      "artifacts": [
+        "tests/FEAT-3c25-lark-pr-bot.test.ts",
+        "package.json",
+        "tsconfig.json",
+        "vitest.config.ts"
+      ],
+      "notes": "RED 已验证：缺少 configLoader/notificationDispatcher/webhookReceiver/index 实现文件"
+    },
+    {
+      "phase": 4,
+      "skill": "coder",
+      "decision": "实现 ConfigLoader/NotificationDispatcher/WebhookReceiver/createApp 四个模块；迭代 1 次全绿",
+      "artifacts": [
+        "src/config/configLoader.ts",
+        "src/notification/notificationDispatcher.ts",
+        "src/webhook/webhookReceiver.ts",
+        "src/index.ts"
+      ],
+      "notes": "38/38 通过，迭代 1 次。INV-01~04 全部通过，FSM 所有状态转换通过，故障旅程通过"
+    },
+    {
+      "phase": 5,
+      "skill": "audit",
+      "decision": "83/100 通过；3个阻塞项已即时修复（.gitignore、config.example.yaml、生产启动校验+yaml加载、secret缓存）",
+      "artifacts": [
+        "docs/audit/FEAT-3c25-lark-pr-bot-audit.md",
+        ".gitignore",
+        "config.example.yaml"
+      ],
+      "notes": "修复后重跑38/38仍全绿；剩余技术债：结构化日志、NotificationType枚举使用"
+    },
+    {
+      "phase": 6,
+      "skill": "update-map",
+      "decision": "创建完整产品文档网络（3模块6文件）+ CSV 索引全套 + trace ADR + MAP.md；关系表双向一致验证通过",
+      "artifacts": [
+        "docs/product/PRODUCT-MAP.md",
+        "docs/product/modules/webhook/index.md",
+        "docs/product/modules/webhook/WebhookReceiver.md",
+        "docs/product/modules/notification/index.md",
+        "docs/product/modules/notification/NotificationDispatcher.md",
+        "docs/product/modules/config/index.md",
+        "docs/product/modules/config/ConfigLoader.md",
+        "docs/traces/files.csv",
+        "docs/traces/tests.csv",
+        "docs/traces/apis.csv",
+        "docs/traces/tech_debt.csv",
+        "docs/MAP.md"
+      ],
+      "notes": "新项目首次建立文档网络；3对关系表双向原子更新完成"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+feat_id,path,desc,lines
+FEAT-3c25-lark-pr-bot,src/types/index.ts,共享类型定义（Config/GitHub事件/Lark卡片/常量）,86
+FEAT-3c25-lark-pr-bot,src/config/configLoader.ts,ConfigLoader：加载仓库→群映射+用户映射，校验重复仓库,43
+FEAT-3c25-lark-pr-bot,src/notification/notificationDispatcher.ts,NotificationDispatcher：构建6种Lark卡片消息并发送,204
+FEAT-3c25-lark-pr-bot,src/webhook/webhookReceiver.ts,WebhookReceiver：HMAC-SHA256签名验证,17
+FEAT-3c25-lark-pr-bot,src/index.ts,createApp工厂函数+生产启动入口（含yaml配置加载）,90
+FEAT-3c25-lark-pr-bot,CLAUDE.md,项目规约：技术栈/目录约定/测试命令/环境变量,50
+FEAT-3c25-lark-pr-bot,.gitignore,排除config.yaml/.env/dist/node_modules,5
+FEAT-3c25-lark-pr-bot,config.example.yaml,配置文件模板（含两个团队示例）,16
+FEAT-3c25-lark-pr-bot,package.json,项目依赖（express/axios/js-yaml/vitest/supertest）,28
+FEAT-3c25-lark-pr-bot,tsconfig.json,TypeScript编译配置,18
+FEAT-3c25-lark-pr-bot,vitest.config.ts,Vitest测试配置,8

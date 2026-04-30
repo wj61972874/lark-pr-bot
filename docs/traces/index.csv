@@ -1,0 +1,2 @@
+id,type,phase,module,component,title,keywords,status,author,date,file,depends_on,depended_by
+FEAT-3c25-lark-pr-bot,FEAT,done,"webhook,notification,config","WebhookReceiver,NotificationDispatcher,ConfigLoader",Lark PR 通知机器人,"lark,github,webhook,pr,notification,hmac,card",done,dev,2026-04-30,docs/traces/FEAT-3c25-lark-pr-bot.md,,

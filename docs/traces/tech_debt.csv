@@ -1,0 +1,4 @@
+feat_id,td_id,priority,desc,added,resolved_by
+FEAT-3c25-lark-pr-bot,TD-001,low,NotificationType枚举已定义但实现中使用字符串字面量,2026-04-30,
+FEAT-3c25-lark-pr-bot,TD-002,low,引入结构化日志（pino/winston）替代console.error,2026-04-30,
+FEAT-3c25-lark-pr-bot,TD-003,low,消息去重（delivery_id）—Non-Goal后续迭代,2026-04-30,

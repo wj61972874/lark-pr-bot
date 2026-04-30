@@ -1,0 +1,5 @@
+{"type":"pattern","key":"express-raw-body-verify","insight":"Express express.json() 的 verify 回调可以将 rawBody Buffer 挂到 req 对象，是 Webhook HMAC 验签的标准做法，无需 body-parser 中间件替换","confidence":9,"files":["src/index.ts"]}
+{"type":"pattern","key":"factory-function-testability","insight":"createApp 工厂函数接受 dispatchOverride 参数，使集成测试可以注入 mock 而无需 vi.mock 模块级拦截，测试更简洁","confidence":9,"files":["src/index.ts","tests/FEAT-3c25-lark-pr-bot.test.ts"]}
+{"type":"pitfall","key":"hmac-empty-secret-fallback","insight":"process.env.SECRET ?? '' 会让服务以空字符串作为 HMAC key 启动，攻击者可用空 key 伪造签名；应在启动时 if(!secret) process.exit(1)","confidence":9,"files":["src/index.ts"]}
+{"type":"pitfall","key":"gitignore-missing-on-new-project","insight":"新项目用 CLAUDE.md 声明了 config.yaml 需要 gitignore，但实际文件未创建，审计才发现；新项目必须将 .gitignore 纳入初始化清单","confidence":9,"files":[".gitignore"]}
+{"type":"pattern","key":"timing-safe-equal-webhook","insight":"crypto.timingSafeEqual 用于 HMAC 比对时需要 try/catch，因为两个 Buffer 长度不同会抛出异常（如签名被截断时）","confidence":8,"files":["src/webhook/webhookReceiver.ts"]}
