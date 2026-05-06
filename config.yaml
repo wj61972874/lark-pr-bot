@@ -1,0 +1,11 @@
+teams:
+  - name: frontend
+    lark_webhook: "https://open.larksuite.com/open-apis/bot/v2/hook/e97958ea-91ee-490c-afdc-bb1e8cf269b9"
+    repositories:
+      - wj61972874/jayBlog
+    user_mappings:
+      JayterWang: "ou_b7da63bb72ede120e1c916c743a65a2d"
+      wenzhongchi: "ou_ba0e4403ecd0211c2c7a229762356d5a"
+      jackyleehong: "ou_fb99870b75f8d70364b520a14559d95e"
+      itenl: "ou_694cbfe5f4368b60e20412f32ce18576"
+      chiasheang: "ou_694cbfe5f4368b60e20412f32ce18576"
