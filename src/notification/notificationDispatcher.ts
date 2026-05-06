@@ -156,6 +156,14 @@ function buildCard(opts: {
     });
   }
 
+  if (opts.mentions.length > 0) {
+    const mentionText = opts.mentions.map((id) => `<at id=${id}></at>`).join(' ');
+    elements.push({
+      tag: 'div',
+      text: { tag: 'lark_md', content: mentionText },
+    });
+  }
+
   elements.push({
     tag: 'action',
     actions: [
