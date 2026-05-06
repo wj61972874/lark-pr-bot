@@ -61,9 +61,11 @@ export class NotificationDispatcher {
     if (action === 'opened') {
       color = 'blue';
       title = `新 PR 待 Review: #${pr.number} ${pr.title}`;
-      mentionUsernames = (pr.requested_reviewers as Array<Record<string, unknown>>).map(
+      const creatorLogin = (pr.user as Record<string, unknown>).login as string;
+      const reviewerLogins = (pr.requested_reviewers as Array<Record<string, unknown>>).map(
         (r) => r.login as string,
       );
+      mentionUsernames = [creatorLogin, ...reviewerLogins];
     } else if (action === 'closed' && pr.merged === true) {
       color = 'green';
       title = `PR 已 Merge: #${pr.number} ${pr.title}`;
