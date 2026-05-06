@@ -2,6 +2,7 @@ teams:
   - name: frontend
     lark_webhook: "https://open.larksuite.com/open-apis/bot/v2/hook/e97958ea-91ee-490c-afdc-bb1e8cf269b9"
     repositories:
+      - gph-tech/fg-frontend-user
       - wj61972874/jayBlog
     user_mappings:
       JayterWang: "ou_b7da63bb72ede120e1c916c743a65a2d"
